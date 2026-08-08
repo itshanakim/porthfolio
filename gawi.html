@@ -1,0 +1,38 @@
+<html>
+<head>
+    
+     <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<section class="gawi">
+<p>please enter gawi</p>
+<input id="gawi_input">
+<button onclick="gawi()">gawibawibo</button>
+</section>
+
+<script>
+    function gawi() {
+        let user_input = document.getElementById("gawi_input").value;
+        let computer_input = "bo";
+
+        if (user_input == "gawi") {
+            alert("you won");
+        } else if (user_input =="bawi") {
+            alert("you lost");
+        } else if(user_input == "bo") {
+            alert("it's the same");
+        } else {
+            alert("try again")
+        }
+        
+        // alert(user_input);
+    
+    }
+
+
+</script>
+
+
+</body>
+</html>

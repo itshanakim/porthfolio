@@ -1,0 +1,61 @@
+<html>
+<head>
+ 
+    <style>
+        #product-grid {
+            background-color: aquamarine;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 3rem;
+        }
+
+        .item {
+            background-color: red;
+            border-radius: 8px;
+            border: 10px solid rgb(38, 40, 151);
+            padding: 18px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<section id="product-grid"></section>
+
+<script>
+    let products = [
+        {"name": "tops","color": "red", "size": "small"},
+        {"name": "pants","color": "blue", "size": "medium"},
+        {"name": "shoes","color": "yellow", "size": "small"},
+        {"name": "hoodie","color": "white", "size": "large"},
+        {"name": "cap","color": "pink","size": "medium"}
+        
+    ];
+
+   //let outcome = "";
+
+   //products.forEach(function (product) {
+       //  outcome += product.name + " " + "<br>";
+   //})
+   //document.getElementById("product-grid").innerHTML = outcome;
+
+   // code 2
+
+   let grid = document.getElementById("product-grid");
+   
+   products.forEach(function (product) {
+    let item = document.createElement("article");
+    item.className = "item";
+    item.innerHTML = product.name + "<br>" + product.color + "<br>" + product.size;
+    grid.appendChild(item);
+   })
+
+   //one more time do this homework
+
+
+</script>
+    
+</body>
+
+</html>
