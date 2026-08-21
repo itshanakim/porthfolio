@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="mk-page">
+<body class="mk-page mk-work-page mk-search-page">
     <header class="mk-header">
         <nav class="mk-nav" aria-label="Main">
             <ul class="mk-nav-links mk-nav-left">
@@ -30,7 +30,30 @@
         </nav>
     </header>
 
-    <main></main>
+    <main class="mk-work-main">
+        <section class="mk-work-intro">
+            <h1 class="mk-work-heading">search</h1>
+        </section>
+
+        <section class="mk-search-panel" aria-label="Search practice book">
+            <label class="mk-search-label" for="mk-search-input">Search practice book</label>
+            <input
+                type="search"
+                id="mk-search-input"
+                class="mk-search-input"
+                placeholder="Try Celine, Dior, Spring/Summer 2024..."
+                autocomplete="off"
+                spellcheck="false"
+            >
+            <p id="mk-search-status" class="mk-search-status" aria-live="polite"></p>
+        </section>
+
+        <section
+            id="mk-search-results"
+            class="mk-work-grid mk-search-results"
+            aria-label="Search results"
+        ></section>
+    </main>
 
     <footer class="mk-footer">
         <div class="mk-footer-brand">Hana Kim</div>
@@ -42,6 +65,9 @@
         </nav>
         <p class="mk-footer-copy">&copy; Hana Kim 2026</p>
     </footer>
+
+    <script src="practice-book-data.js"></script>
+    <script src="search.js"></script>
 </body>
 
 </html>

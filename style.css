@@ -514,6 +514,111 @@
             }
         }
 
+        /* My Designs feature layout */
+        .mk-design-feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 0;
+            align-items: start;
+            border-bottom: 1px solid #e8e8e8;
+            padding-bottom: 1.5rem;
+        }
+
+        .mk-design-feature__media {
+            margin: 0;
+            padding: 0 1.5rem 0 0;
+            border-right: 1px solid #e8e8e8;
+        }
+
+        .mk-design-feature__text {
+            padding: 0 0 0 1.5rem;
+        }
+
+        .mk-design-feature__text p {
+            margin: 0;
+            color: #444;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            line-height: 1.7;
+        }
+
+        .mk-design-feature__text p + p {
+            margin-top: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .mk-design-feature {
+                grid-template-columns: 1fr;
+                row-gap: 1.25rem;
+            }
+
+            .mk-design-feature__media {
+                padding-right: 0;
+                border-right: none;
+            }
+
+            .mk-design-feature__text {
+                padding-left: 0;
+            }
+        }
+
+        /* Search page */
+        .mk-search-page .mk-search-panel {
+            margin-bottom: 2rem;
+            max-width: 640px;
+        }
+
+        .mk-search-page .mk-search-label {
+            display: block;
+            margin-bottom: 0.65rem;
+            color: #444;
+            font-size: 12px;
+            letter-spacing: 0.04em;
+        }
+
+        .mk-search-page .mk-search-input {
+            width: 100%;
+            padding: 0.85rem 0;
+            border: 0;
+            border-bottom: 1px solid #111;
+            background: transparent;
+            color: #111;
+            font-family: inherit;
+            font-size: 14px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .mk-search-page .mk-search-input::placeholder {
+            color: #999;
+        }
+
+        .mk-search-page .mk-search-status {
+            margin: 0.85rem 0 0;
+            color: #666;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .mk-search-page .mk-search-results:empty {
+            display: none;
+        }
+
+        .mk-search-page .mk-search-result-link {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .mk-search-page .mk-search-result-link:hover .mk-work-item__img {
+            opacity: 0.92;
+        }
+
+        .mk-search-page .mk-work-item__img {
+            transition: opacity 0.2s ease;
+        }
+
         /* About page — Matin Kim Brand page style (matinkim.shop/pages/brand) */
         .mk-about-page {
             --mk-brand-gap: 1rem;
@@ -583,9 +688,9 @@
 
         .mk-about-page .mk-brand-visual {
             flex-shrink: 0;
-            width: auto;
+            width: 100%;
             height: auto;
-            margin: var(--mk-brand-gap) -50px 0;
+            margin: var(--mk-brand-gap) 0 0;
             padding: 0;
             border: 0;
             line-height: 0;
@@ -623,8 +728,8 @@
             }
 
             .mk-about-page .mk-brand-visual {
-                margin-left: -30px;
-                margin-right: -30px;
+                margin-left: 0;
+                margin-right: 0;
             }
 
             .mk-about-page .mk-brand-heading {
@@ -665,8 +770,8 @@
             }
 
             .mk-about-page .mk-brand-visual {
-                margin-left: -16px;
-                margin-right: -16px;
+                margin-left: 0;
+                margin-right: 0;
             }
 
             .mk-about-page .mk-brand-heading {
