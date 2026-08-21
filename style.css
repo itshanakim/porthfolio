@@ -187,49 +187,12 @@
             object-fit: cover;
             display: block;
             opacity: 0;
-            animation-duration: 12s;
-            animation-timing-function: ease-in-out;
-            animation-iteration-count: infinite;
+            transition: opacity 0.9s ease-in-out;
         }
 
-        .mk-hero-slide--1 {
-            animation-name: mk-hero-fade-1;
-        }
-
-        .mk-hero-slide--2 {
-            animation-name: mk-hero-fade-2;
-        }
-
-        @keyframes mk-hero-fade-1 {
-            0%,
-            40% {
-                opacity: 1;
-            }
-
-            50%,
-            90% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes mk-hero-fade-2 {
-            0%,
-            40% {
-                opacity: 0;
-            }
-
-            50%,
-            90% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0;
-            }
+        .mk-hero-slide.is-active {
+            opacity: 1;
+            z-index: 1;
         }
 
         .mk-hero-center {
@@ -272,6 +235,41 @@
         .mk-hero-center-tagline--sub {
             margin-top: 0.4rem;
             animation-delay: 1.35s;
+        }
+
+        .mk-hero-numbers {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 1.75rem;
+            z-index: 3;
+            display: flex;
+            justify-content: center;
+            gap: 1.35rem;
+        }
+
+        .mk-hero-number {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.55);
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.18em;
+            cursor: pointer;
+            text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+            transition: color 0.25s ease, transform 0.25s ease;
+        }
+
+        .mk-hero-number:hover,
+        .mk-hero-number.is-active {
+            color: #fff;
+        }
+
+        .mk-hero-number.is-active {
+            transform: translateY(-1px);
         }
 
         @keyframes mk-hero-pop-slow {

@@ -33,12 +33,26 @@
                 <img
                     src="images/fashion-runway.png"
                     alt="Models walking on a fashion runway in black and neutral tones"
-                    class="mk-hero-slide mk-hero-slide--1"
+                    class="mk-hero-slide mk-hero-slide--1 is-active"
+                    data-slide="1"
                 >
                 <img
                     src="images/fashion-runway-2.png"
                     alt="Model walking on a white runway in black heels and a silver skirt"
                     class="mk-hero-slide mk-hero-slide--2"
+                    data-slide="2"
+                >
+                <img
+                    src="images/about-fashion.png"
+                    alt="Fashion editorial portrait in monochrome tones"
+                    class="mk-hero-slide mk-hero-slide--3"
+                    data-slide="3"
+                >
+                <img
+                    src="images/fashion-fitting.jpg"
+                    alt="Fashion fitting session with draped fabric and pins"
+                    class="mk-hero-slide mk-hero-slide--4"
+                    data-slide="4"
                 >
             </div>
             <div class="mk-hero-center">
@@ -46,6 +60,12 @@
                 <p class="mk-hero-center-tagline">Portfolio</p>
                 <p class="mk-hero-center-tagline mk-hero-center-tagline--sub">Creative journey</p>
             </div>
+            <nav class="mk-hero-numbers" aria-label="Home slides">
+                <button type="button" class="mk-hero-number is-active" data-slide="1" aria-label="Show slide 1">1</button>
+                <button type="button" class="mk-hero-number" data-slide="2" aria-label="Show slide 2">2</button>
+                <button type="button" class="mk-hero-number" data-slide="3" aria-label="Show slide 3">3</button>
+                <button type="button" class="mk-hero-number" data-slide="4" aria-label="Show slide 4">4</button>
+            </nav>
         </section>
     </main>
 
@@ -59,6 +79,55 @@
         </nav>
         <p class="mk-footer-copy">&copy; Hana Kim 2026</p>
     </footer>
+
+    <script>
+        (function () {
+            var slides = Array.prototype.slice.call(document.querySelectorAll(".mk-hero-slide"));
+            var buttons = Array.prototype.slice.call(document.querySelectorAll(".mk-hero-number"));
+            if (!slides.length || !buttons.length) return;
+
+            var current = 0;
+            var timer;
+
+            function showSlide(index) {
+                current = (index + slides.length) % slides.length;
+
+                slides.forEach(function (slide, i) {
+                    slide.classList.toggle("is-active", i === current);
+                });
+
+                buttons.forEach(function (button, i) {
+                    button.classList.toggle("is-active", i === current);
+                });
+            }
+
+            function nextSlide() {
+                showSlide(current + 1);
+            }
+
+            function startTimer() {
+                stopTimer();
+                timer = window.setInterval(nextSlide, 4000);
+            }
+
+            function stopTimer() {
+                if (timer) {
+                    window.clearInterval(timer);
+                    timer = null;
+                }
+            }
+
+            buttons.forEach(function (button, index) {
+                button.addEventListener("click", function () {
+                    showSlide(index);
+                    startTimer();
+                });
+            });
+
+            showSlide(0);
+            startTimer();
+        })();
+    </script>
 </body>
 
 </html>
