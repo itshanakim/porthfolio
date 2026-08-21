@@ -60,12 +60,6 @@
                 <p class="mk-hero-center-tagline">Portfolio</p>
                 <p class="mk-hero-center-tagline mk-hero-center-tagline--sub">Creative journey</p>
             </div>
-            <nav class="mk-hero-numbers" aria-label="Home slides">
-                <button type="button" class="mk-hero-number is-active" data-slide="1" aria-label="Show slide 1">1</button>
-                <button type="button" class="mk-hero-number" data-slide="2" aria-label="Show slide 2">2</button>
-                <button type="button" class="mk-hero-number" data-slide="3" aria-label="Show slide 3">3</button>
-                <button type="button" class="mk-hero-number" data-slide="4" aria-label="Show slide 4">4</button>
-            </nav>
         </section>
     </main>
 
@@ -83,8 +77,7 @@
     <script>
         (function () {
             var slides = Array.prototype.slice.call(document.querySelectorAll(".mk-hero-slide"));
-            var buttons = Array.prototype.slice.call(document.querySelectorAll(".mk-hero-number"));
-            if (!slides.length || !buttons.length) return;
+            if (!slides.length) return;
 
             var current = 0;
             var timer;
@@ -94,10 +87,6 @@
 
                 slides.forEach(function (slide, i) {
                     slide.classList.toggle("is-active", i === current);
-                });
-
-                buttons.forEach(function (button, i) {
-                    button.classList.toggle("is-active", i === current);
                 });
             }
 
@@ -116,13 +105,6 @@
                     timer = null;
                 }
             }
-
-            buttons.forEach(function (button, index) {
-                button.addEventListener("click", function () {
-                    showSlide(index);
-                    startTimer();
-                });
-            });
 
             showSlide(0);
             startTimer();
